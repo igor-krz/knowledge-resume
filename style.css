@@ -38,6 +38,8 @@ h1 {
   padding: 50px 0;
 }
 
+/* Create Line */
+
 #timeline ul li {
   list-style: none;
   position: relative;
@@ -46,6 +48,8 @@ h1 {
   margin: 0 auto;
   background: #fff;
 }
+
+/* Boxes */
 
 #timeline ul li div {
   position: relative;
@@ -68,6 +72,7 @@ h1 {
 }
 
 /* Dots */
+
 #timeline ul li:after {
   content: '';
   position: absolute;
@@ -100,8 +105,38 @@ h1 {
   border-color: transparent var(--secondary-color) transparent transparent;
 }
 
+/* Left Side Arrows */
+
 #timeline ul li:nth-child(even) div:before {
   right: -15px;
   border-width: 8px 0 8px 16px;
   border-color: transparent transparent transparent var(--secondary-color);
+}
+
+@media (max-width: 900px) {
+  #timeline ul li div {
+    width: 250px;
+  }
+  #timeline ul li:nth-child(even) div {
+    left: -284px;
+  }
+}
+
+@media (max-width: 600px) {
+  #timeline ul li {
+    margin-left: 20px;
+  }
+
+  #timeline ul li div {
+    width: calc(100vw - 90px);
+  }
+
+  #timeline ul li:nth-child(even) div {
+    left: 40px;
+  }
+  #timeline ul li:nth-child(even) div:before {
+    left: -15px;
+    border-width: 8px 16px 8px 0;
+    border-color: transparent var(--secondary-color) transparent transparent;
+  }
 }
